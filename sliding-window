@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+int findMaxSumSubarray(int arr[],int size,int key){
+int sum=0;
+int max[size];
+int i=0,j=0,k=0;
+while(j<size){
+sum=sum+arr[j];
+if(j-i+1<k){
+j++
+}
+else if(j==key){
+max[k]=sum;
+sum=sum-arr[i];
+i++;
+j++;
+k++;
+}
+}
+}
+int maxSum=max[0];
+for(i=0;i<k;i++){
+if(max[i]>maxSum){
+maxSum=max[i];
+}}
+return maxSum;
+}
+
+int main(){
+int array[]={3,6,3,4,5,4,7};
+int len=sizeof(array)/sizeof(array[0]);
+int res=findMaxSumSubarray(array,len,res); 
+return 0;
+}
